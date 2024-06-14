@@ -46,7 +46,7 @@ list2=[[1, 2], [3,4], [1,2], [3,4]]
 
 print(matrix_mult(newList, 2)) #driver code, test if matrix_mult works with a scalar
 
-#print(matrix_mult(newList, list2)) #driver code, test if matrix_mult works with two matrices
+print(matrix_mult(newList, list2)) #driver code, test if matrix_mult works with two matrices
 
 #print(exp_by_squaring(2, 20)) #driver code, test if exp_by_squaring works
 
@@ -60,25 +60,29 @@ for j in range (0, int(numRows)): #go through the rows
                     uList.append(float(uNum))
             userMatrix.append(uList) #creates the separate rows in the list
 
-type=input("Enter 0 to multiply by a number, 1 to multiply by another matrix ")
+scalMat=input("Enter 0 to multiply by a number, 1 to multiply by another matrix ")
 
-if type=="0":
+while(scalMat!="0" and scalMat !="1"):
+     scalMat=input("Invalid input, please try again ") #if the user inputs something other than a 0 or a 1, they cannot move on
+
+if scalMat=="0":
      multiplier=float(input("Enter the multiplier "))
-     print("Your final matrix is " + matrix_mult(userMatrix, multiplier))
-elif type=="1":
-     multiplierRows=input("How many rows in the second matrix? ")
-     multiplierColumns=input("How many columns in the second matrix? ")
-     mMatrix=[]
-     for x in range (0, int(multiplierRows)): #go through the rows
-            mList=[]
-            for y in range(0, int(multiplierColumns)): #go through the columns
-                    mNum=input("Add a value to the array ")
-                    mList.append(float(mNum))
-            mMatrix.append(mList) #creates the separate rows in the list
-            print("Your final matrix is " + matrix_mult(userMatrix, mMatrix))
-
+     product=matrix_mult(userMatrix, multiplier)
+     print("Your final matrix is ", product)
 else:
-     type=("Invalid input, please try again")
+     multiplierRows=input("How many rows in the second matrix? ")
+     mutliplierColumns=input("How many columns in the second matrix? ")
+     mMatrix=[]
+     for x in range(0, int(multiplierRows)): #go through the rows
+            mList=[]
+            for i in range(0, int(mutliplierColumns)): #go through the columns
+                    mNum=input("Add a value to the array ")
+                    mList.append(float(mNum)) #add the product to a new list (this will be the columns in the new array)      
+            mMatrix.append(mList)
+     print("Your final matrix is ", matrix_mult(userMatrix, mMatrix))
+
+     
+
      
             
 
