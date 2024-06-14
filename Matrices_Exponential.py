@@ -39,11 +39,11 @@ def exp_by_squaring(x, n): #x is the base number, n is the exponent
 newList=[[1, 2, 3, 4], [1, 2, 3, 4]]
 list2=[[1, 2], [3,4], [1,2], [3,4]]
 
-print(matrix_mult(newList, 2)) #driver code, test if matrix_mult works with a scalar
+#print(matrix_mult(newList, 2)) driver code, test if matrix_mult works with a scalar
 
-print(matrix_mult(newList, list2)) #driver code, test if matrix_mult works with two matrices
+#print(matrix_mult(newList, list2)) driver code, test if matrix_mult works with two matrices
 
-print(exp_by_squaring(2, 20)) #driver code, test if exp_by_squaring works
+#print(exp_by_squaring(2, 20)) driver code, test if exp_by_squaring works
 
 numRows=input("How many rows in the first matrix? ")
 numColumns=input("How many columns in the first matrix? ")
@@ -62,8 +62,7 @@ while(scalMat!="0" and scalMat !="1"):
 
 if scalMat=="0":
      multiplier=float(input("Enter the multiplier "))
-     product=matrix_mult(userMatrix, multiplier)
-     print("Your final matrix is ", product)
+     print("Your final matrix is: ", matrix_mult(userMatrix, multiplier))
 else:
      multiplierRows=input("How many rows in the second matrix? ")
      mutliplierColumns=input("How many columns in the second matrix? ")
@@ -74,7 +73,7 @@ else:
                     mNum=input("Add a value to the array ")
                     mList.append(float(mNum)) #add the product to a new list (this will be the columns in the new array)      
             mMatrix.append(mList)
-     print("Your final matrix is ", matrix_mult(userMatrix, mMatrix))
+     print("Your final matrix is: ", matrix_mult(userMatrix, mMatrix))
 
 userBase=input("What is your base number? ")
 userExp=input("What power would you like to raise the base to? ")
