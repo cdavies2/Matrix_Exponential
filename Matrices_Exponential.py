@@ -25,11 +25,6 @@ def matrix_mult(m, y): #m is the matrix you're multiplying by, y is the multiple
         return finalMat
 
 
-    
-
-
-
-
 
 
 def exp_by_squaring(x, n): #x is the base number, n is the exponent
@@ -48,7 +43,7 @@ print(matrix_mult(newList, 2)) #driver code, test if matrix_mult works with a sc
 
 print(matrix_mult(newList, list2)) #driver code, test if matrix_mult works with two matrices
 
-#print(exp_by_squaring(2, 20)) #driver code, test if exp_by_squaring works
+print(exp_by_squaring(2, 20)) #driver code, test if exp_by_squaring works
 
 numRows=input("How many rows in the first matrix? ")
 numColumns=input("How many columns in the first matrix? ")
@@ -81,7 +76,9 @@ else:
             mMatrix.append(mList)
      print("Your final matrix is ", matrix_mult(userMatrix, mMatrix))
 
-     
+userBase=input("What is your base number? ")
+userExp=input("What power would you like to raise the base to? ")
+print("Your product is ", exp_by_squaring(float(userBase), float(userExp)))
 
      
             
